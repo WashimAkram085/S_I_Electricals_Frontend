@@ -2,7 +2,7 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #F68B1E;
+    background-color: #2a2828;
     padding: 15px;
     font-size: 20px;
     font-weight: 600;
@@ -19,7 +19,7 @@ button{
     border: none;
     margin-left: 2px;
     background-color: #fff;
-    color: #F68B1E;
+    color: #3d3b3b;
     font-weight: bold;
     border-radius: 3px;
     cursor: pointer;

@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit, OnDestroy {
-  constructor(private router: Router) { }
+  constructor(private router: Router,private readonly apiService: ApiService) { }
 
   isAdmin: boolean = false;
   isAuthenticated: boolean = false;
@@ -22,13 +23,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    // this.isAuthenticated = this.apiService.isAuthenticated();
-    // this.isAdmin = this.apiService.isAdmin();
+    this.isAuthenticated = this.apiService.isAuthenticated();
+    this.isAdmin = this.apiService.isAdmin();
 
-    // this.authStatusSub = this.apiService.authStatuschanged.subscribe(() => {
-    //   this.isAuthenticated = this.apiService.isAuthenticated();
-    //   this.isAdmin = this.apiService.isAdmin();
-    // })
+    this.authStatusSub = this.apiService.authStatuschanged.subscribe(() => {
+      this.isAuthenticated = this.apiService.isAuthenticated();
+      this.isAdmin = this.apiService.isAdmin();
+    })
   }
 
   handleSearchSubmit() {
@@ -36,12 +37,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   handleLogout() {
-    // const confirm = window.confirm("Are you sure you want to log out? ")
-    // if (confirm) {
-    //   this.apiService.logout();
-    //   this.router.navigate(['/login'])
-    //   this.apiService.authStatuschanged.emit();
-    // }
+    const confirm = window.confirm("Are you sure you want to log out? ")
+    if (confirm) {
+      this.apiService.logout();
+      this.router.navigate(['/login'])
+      this.apiService.authStatuschanged.emit();
+    }
   }
 
   ngOnDestroy(): void {

@@ -1,8 +1,8 @@
 <nav>
-    <a routerLink="/">LOGO</a>
+    <a routerLink="/">S. I.</a>
     <!-- Search  Form -->
     <form (submit)="handleSearchSubmit()">
-        <input type="text" placeholder="Search product ..." name="searchValue">
+        <input type="text" placeholder="Search product ..." name="searchValue" [(ngModel)]="searchValue">
         <button type="submit">Search</button>
     </form>
     <div>

@@ -6,7 +6,6 @@ div {
     border-radius: 10px;
     margin-bottom: 8rem;
     background-image: linear-gradient(to bottom, #ffffff, #cac7c7);
-    
 }
 
 h2 {
@@ -47,7 +46,7 @@ button:hover {
 
 .message {
     text-align: center;
-    color: #2a308d;
+    color: #251ef6;
 }
 .register-link{
     margin-top: 20px;
@@ -55,5 +54,5 @@ button:hover {
 }
 a{
     text-decoration: none;
-    color: #301ef6;
+    color: #1e29f6;
 }

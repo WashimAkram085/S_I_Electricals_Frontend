@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   authStatuschanged = new EventEmitter<void>();
-  private static BASE_URL = 'http://localhost:2424';
+  private static BASE_URL = 'https://s-i-electricals-backend-1.onrender.com';
 
 
   constructor(private http: HttpClient) { }

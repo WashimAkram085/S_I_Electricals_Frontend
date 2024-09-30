@@ -19,13 +19,15 @@ export class RegisterComponent {
     email: '',
     name: '',
     phoneNumber: '',
-    password: ''
+    password: '',
+    role:'USER'
   }
 
   message: any = null;
 
 
   async handleSubmit() {
+    console.log(this.formData);
     if (!this.formData.email || !this.formData.name || !this.formData.phoneNumber || !this.formData.password) {
       this.showMessage("All fields are required")
       return;

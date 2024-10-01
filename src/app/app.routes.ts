@@ -8,6 +8,8 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryproductsComponent } from './categoryproducts/categoryproducts.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddressComponent } from './address/address.component';
+import { userGuard } from './service/guard.service';
 
 export const routes: Routes = [
     // Public routes
@@ -22,7 +24,9 @@ export const routes: Routes = [
 
 
     //User Routes
-    {path:'profile', component: ProfileComponent},
+    {path:'profile', component: ProfileComponent, canActivate:[userGuard]},
+    {path:'add-address', component: AddressComponent, canActivate:[userGuard]},
+    {path:'edit-address', component: AddressComponent, canActivate:[userGuard]},
     
     
 ];

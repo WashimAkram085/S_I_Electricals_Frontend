@@ -9,7 +9,11 @@ import { CategoryproductsComponent } from './categoryproducts/categoryproducts.c
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
-import { userGuard } from './service/guard.service';
+import { adminGuard, userGuard } from './service/guard.service';
+import { AdminComponent } from './admin/admin/admin.component';
+import { AdmincategoryComponent } from './admin/admincategory/admincategory.component';
+import { AddcategoryComponent } from './admin/addcategory/addcategory.component';
+import { EditcategoryComponent } from './admin/editcategory/editcategory.component';
 
 export const routes: Routes = [
     // Public routes
@@ -28,5 +32,10 @@ export const routes: Routes = [
     {path:'add-address', component: AddressComponent, canActivate:[userGuard]},
     {path:'edit-address', component: AddressComponent, canActivate:[userGuard]},
     
+    //Admin Routes
+    {path: 'admin', component: AdminComponent, canActivate:[adminGuard]},
+    {path: 'admin/categories', component: AdmincategoryComponent, canActivate:[adminGuard]},
+    {path: 'admin/add-category', component: AddcategoryComponent,canActivate:[adminGuard]},
+    {path: 'admin/edit-category/:categoryId', component: EditcategoryComponent, canActivate:[adminGuard]},
     
 ];

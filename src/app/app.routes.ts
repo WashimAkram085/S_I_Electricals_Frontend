@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryproductsComponent } from './categoryproducts/categoryproducts.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
     // Public routes
@@ -16,5 +17,8 @@ export const routes: Routes = [
     {path:'product/:productId',component:ProductdetailsComponent},
     {path:'category', component: CategoryComponent},
     {path: 'products/:categoryId', component: CategoryproductsComponent},
+    {path:'cart',component:CartComponent},
+
+    
     
 ];

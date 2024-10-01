@@ -14,6 +14,7 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { AdmincategoryComponent } from './admin/admincategory/admincategory.component';
 import { AddcategoryComponent } from './admin/addcategory/addcategory.component';
 import { EditcategoryComponent } from './admin/editcategory/editcategory.component';
+import { AdminproductComponent } from './admin/adminproduct/adminproduct.component';
 
 export const routes: Routes = [
     // Public routes
@@ -37,5 +38,6 @@ export const routes: Routes = [
     {path: 'admin/categories', component: AdmincategoryComponent, canActivate:[adminGuard]},
     {path: 'admin/add-category', component: AddcategoryComponent,canActivate:[adminGuard]},
     {path: 'admin/edit-category/:categoryId', component: EditcategoryComponent, canActivate:[adminGuard]},
+    {path:'admin/products', component: AdminproductComponent, canActivate:[adminGuard]},
     
 ];

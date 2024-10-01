@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PaginationComponent } from '../pagination/pagination.component';
-import { ProductlistComponent } from '../productlist/productlist.component';
 import { ApiService } from '../service/api.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ProductlistComponent } from '../productlist/productlist.component';
 
 @Component({
   selector: 'app-home',

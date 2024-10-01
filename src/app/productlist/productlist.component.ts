@@ -28,6 +28,9 @@ export class ProductlistComponent {
     this.cartService.addItem(product)
   }
 
+  goToCart(): void{
+    this.router.navigate(['/cart'])
+  }
   incrementItem(product: Product): void{
     this.cartService.incrementItem(Number(product.id))
   }

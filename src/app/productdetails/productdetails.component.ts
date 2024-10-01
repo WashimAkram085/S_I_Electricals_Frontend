@@ -4,7 +4,7 @@ import { CartService } from '../service/cart.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { catchError, map, of } from 'rxjs';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-productdetails',
@@ -15,7 +15,7 @@ import { catchError, map, of } from 'rxjs';
 })
 export class ProductdetailsComponent {
 
-  constructor(private apiService: ApiService, private cartService: CartService, private route: ActivatedRoute) { }
+  constructor(private apiService: ApiService, private cartService: CartService, private route: ActivatedRoute, private router: Router) { }
 
   product: any = null;
   cartItem: any = null;
@@ -52,11 +52,15 @@ export class ProductdetailsComponent {
       this.cartItem = this.cartService.getCartItem(this.product.id)
     }
   }
+  gotoCart() {
+    this.router.navigate(['/cart']);
+  }
 
   incrementItem() {
     if (this.product) {
       this.cartService.incrementItem(this.product.id);
-      this.cartItem = this.cartService.getCartItem(this.product.id)
+      this.cartItem = this.cartService.getCartItem(this.product.id);
+      // console.log("CART ITEM IS: " + this.cartItem.quantity);
     }
   }
 

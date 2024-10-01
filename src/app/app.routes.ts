@@ -22,9 +22,9 @@ import { AdminorderdetailsComponent } from './admin/adminorderdetails/adminorder
 
 export const routes: Routes = [
     // Public routes
+    {path:'', redirectTo:'home', pathMatch:'full'},
     {path:'register', component: RegisterComponent},
     {path:'login', component:LoginComponent},
-    {path:'productlist',component:ProductlistComponent},
     {path:'home',component:HomeComponent},
     {path:'product/:productId',component:ProductdetailsComponent},
     {path:'categories', component: CategoryComponent},
